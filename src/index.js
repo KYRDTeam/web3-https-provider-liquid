@@ -227,10 +227,8 @@ HttpProvider.prototype.send = function (payload, callback) {
       })
       .catch(function (e) {
         callback({
-          message: errors.InvalidResponse(response).message,
+          message: errors.InvalidResponse(e).message,
           host: host,
-          response,
-          error: e,
         });
       });
   };
