@@ -225,8 +225,13 @@ HttpProvider.prototype.send = function (payload, callback) {
           callback(null, data);
         }
       })
-      .catch(function () {
-        callback({ message: errors.InvalidResponse(response.error).message, host: host });
+      .catch(function (e) {
+        callback({
+          message: errors.InvalidResponse(response).message,
+          host: host,
+          response,
+          error: e,
+        });
       });
   };
 
