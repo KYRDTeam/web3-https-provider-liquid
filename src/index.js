@@ -226,7 +226,7 @@ HttpProvider.prototype.send = function (payload, callback) {
         }
       })
       .catch(function (e) {
-        callback({ message: e, host: host });
+        callback({ message: "ABCDE", host: host });
       });
   };
 
